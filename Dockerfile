@@ -40,7 +40,7 @@ RUN pip install -r requirements.txt && chmod +x /work/start.sh
 RUN ollama serve & \
     OLLAMA_PID=$! && \
     sleep 10 && \
-    ollama pull gemma4:latest && \
+    #ollama pull gemma4:latest && \
     ollama pull embeddinggemma:latest && \
     kill ${OLLAMA_PID}
 
