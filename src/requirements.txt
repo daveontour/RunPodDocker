@@ -1,0 +1,4 @@
+runpod
+python-dotenv
+httpx
+orjson==3.10.14

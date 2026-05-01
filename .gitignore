@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+call_image_classify.py
+call_image_question.py
+.runpod/
+.github/
