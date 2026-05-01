@@ -26,10 +26,11 @@ async def handler(job: any):
 #    async for batch in results_generator:
 #        yield batch
 
-runpod.serverless.start(
-    {
-        "handler": handler,
-        "concurrency_modifier": lambda x: max_concurrency,
-        "return_aggregate_stream": True,
-    }
-)
+runpod.serverless.start({"handler": handler}) 
+# runpod.serverless.start(
+#     {
+#         "handler": handler,
+#         "concurrency_modifier": lambda x: max_concurrency,
+#         "return_aggregate_stream": True,
+#     }
+# )
