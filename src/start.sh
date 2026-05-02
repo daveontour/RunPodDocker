@@ -33,5 +33,5 @@ done
 # ollama pull gemma4:latest
 # ollama pull embeddinggemma:latest
 
-#python -u handler.py $1
-python -u handler.py "${1:---rp_serve_api}" --rp_api_host 0.0.0.0 --rp_api_port 8000
+python -u handler.py $1
+#python -u handler.py "${1:---rp_serve_api}" --rp_api_host 0.0.0.0 --rp_api_port 8000
