@@ -1,3 +1,8 @@
+ARG OLLAMA_VERSION=0.22.1
+
+# Use an official base${OLLAMA_VERSION} image with your desired version
+FROM ollama/ollama:${OLLAMA_VERSION}
+
 ENV PYTHONUNBUFFERED=1
 
 # Set up the working directory
