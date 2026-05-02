@@ -16,7 +16,7 @@ WORKDIR /work
 
 COPY ./src /work
 
-ENV OLLAMA_MODELS="/runpod-volume/models"
+#ENV OLLAMA_MODELS="/runpod-volume/models"
 
 RUN pip install --no-cache-dir -r requirements.txt && chmod +x /work/start.sh
 
