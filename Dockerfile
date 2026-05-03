@@ -8,15 +8,20 @@ RUN apt-get update --yes --quiet && \
     build-essential \
     ca-certificates \
     curl \
-    bash && \
+    bash \
+    zstd && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# install the latest ollama
+RUN curl -sSfL https://ollama.com/install.sh | bash
+
 
 WORKDIR /work
 
 COPY ./src /work
 
-#ENV OLLAMA_MODELS="/runpod-volume/models"
+ENV OLLAMA_MODELS="/runpod-volume/models"
 
 RUN pip install --no-cache-dir -r requirements.txt && chmod +x /work/start.sh
 
