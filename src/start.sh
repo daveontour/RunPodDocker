@@ -12,10 +12,7 @@ trap cleanup SIGINT SIGTERM
 # Kill any existing ollama processes
 pgrep ollama | xargs kill
 
-# verify volume is mounted
-echo "Volume is mounted: $(ls -la /runpod-volume/models)"
-print(os.listdir('/runpod-volume'))
-
+export OLLAMA_MODELS="/runpod-volume/models/"
 
 # Start the ollama server and log its output
 ollama serve 2>&1 | tee ollama.server.log &
@@ -35,8 +32,7 @@ while ! check_server_is_running; do
     sleep 5
 done
 
-# ollama pull gemma4:latest
-# ollama pull embeddinggemma:latest
+ollama pull embeddinggemma:latest
 
 python -u handler.py $1
 #python -u handler.py "${1:---rp_serve_api}" --rp_api_host 0.0.0.0 --rp_api_port 8000
