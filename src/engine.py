@@ -33,6 +33,13 @@ class OllamaEngine:
                 yield {"error": str(e)}
             return
 
+        if job_input.volume_content:
+            path = "/runpod-volume"
+            content = os.listdir(path)
+            body = {"content": content}
+            yield body
+            return
+
         if job_input.prompt:
             path = "/api/generate"
             body = {"model": model, "prompt": job_input.prompt, "stream": False}

@@ -12,6 +12,11 @@ trap cleanup SIGINT SIGTERM
 # Kill any existing ollama processes
 pgrep ollama | xargs kill
 
+# verify volume is mounted
+echo "Volume is mounted: $(ls -la /runpod-volume/models)"
+print(os.listdir('/runpod-volume'))
+
+
 # Start the ollama server and log its output
 ollama serve 2>&1 | tee ollama.server.log &
 OLLAMA_PID=$! # Store the process ID (PID) of the background command

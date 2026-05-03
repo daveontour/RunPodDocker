@@ -7,3 +7,4 @@ class JobInput:
         self.imageClassifyRequest = job.get("imageClassifyRequest")
         self.imageQuestionRequest = job.get("imageQuestionRequest")
         self.question = job.get("question")
+        self.volume_content = job.get("volume_content")
