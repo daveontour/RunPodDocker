@@ -17,7 +17,7 @@ class OllamaEngine:
         print ("OllamaEngine initialized")
 
     async def generate(self, job_input):
-        model =  "gemma4:latest"
+        model =  "gemma4:e4b"
         embedding_model = "embeddinggemma:latest"
 
         if job_input.list_models:
